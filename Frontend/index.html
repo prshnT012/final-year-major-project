@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Processing</title>
+
+</head>
+
+<body>
+  <h1>Task 1: Upload Original Image</h1>
+  <form id="originalForm" action="/uploadOriginal" method="POST" enctype="multipart/form-data">
+    <input type="file" name="original_image" accept="image/*" required>
+    <button type="submit">Upload Original Image</button>
+  </form>
+  <div id="originalMessage"></div>
+
+  <h1>Task 2: Upload Damage Image</h1>
+  <form id="damageForm" action="/uploadDamage" method="POST" enctype="multipart/form-data" disabled>
+    <input type="file" name="damage_image" accept="image/*" required>
+    <button type="submit">Upload Damage Image</button>
+  </form>
+  <div id="damageMessage"></div>
+
+  <!-- Add Task 3 Button and Result Display -->
+  <h1>Task 3: Perform Operation</h1>
+  <button id="performOperation">Perform Operation</button>
+  <div id="operationResult"></div>
+
+   <!-- Add Task 4 Button and Result Display -->
+   <h1>Task 4: Calculate damage portion</h1>
+   <button id="CalculateDamagePortion">Calculate damage portion</button>
+   <div id="damageOperationResult"></div>
+
+  <!-- Add Task 5 Button and Result Display -->
+  <h1>Task 5: Show damaged part of image</h1>
+  <button id="imagePerformOperation">Load image</button><br><br>
+  <img id="image" src="" alt="Image">
+
+  <script>
+    const originalForm = document.getElementById('originalForm');
+    const damageForm = document.getElementById('damageForm');
+    const damageImageInput = document.querySelector('input[name="damage_image"]');
+    const originalMessageDiv = document.getElementById('originalMessage');
+    const damageMessageDiv = document.getElementById('damageMessage');
+
+    // Add Event Listener for Task 3 Button Click
+    const performOperationButton = document.getElementById('performOperation');
+    const operationResultDiv = document.getElementById('operationResult');
+
+    // Add Event Listener for Task 4 Button Click
+    const CalculateDamagePortionButton = document.getElementById('CalculateDamagePortion');
+    const damageOperationResultDiv = document.getElementById('damageOperationResult');
+
+    // Add Event Listener for Task 5 Button Click
+    const imagePerformOperationButton = document.getElementById('imagePerformOperation');
+    const imageElement = document.getElementById('image');
+
+    // Event listener for original image upload form submission
+    originalForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+      const formData = new FormData(originalForm);
+
+      // Submit the form using fetch API
+      fetch('/uploadOriginal', { method: 'POST', body: formData })
+        .then(response => response.text())
+        .then(message => {
+          originalMessageDiv.innerText = message;
+          // Show the damage image upload form after successful original image upload
+          damageForm.style.display = 'block';
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    // Event listener for damage image upload form submission
+    damageForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+      const formData = new FormData(damageForm);
+
+      // Submit the form using fetch API
+      fetch('/uploadDamage', { method: 'POST', body: formData })
+        .then(response => response.text())
+        .then(message => {
+          damageMessageDiv.innerText = message;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    performOperationButton.addEventListener('click', function () {
+      // Send AJAX request to perform the operation
+      fetch('/performOperation')
+        .then(response => response.text())
+        .then(result => {
+          // Display the result in the div tag
+          operationResultDiv.innerText = result;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    // task-4
+    CalculateDamagePortionButton.addEventListener('click', function () {
+      // Send AJAX request to perform the operation
+      fetch('/CalculateDamagePortion')
+        .then(response => response.text())
+        .then(result => {
+          // Display the result in the div tag
+          damageOperationResultDiv.innerText = result;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+
+
+
+    // Event listener for Task 5 button click
+    imagePerformOperationButton.addEventListener('click', function () {
+
+      // Send a GET request to the server to fetch the image
+      fetch('/image')
+        .then(response => {
+          // Check if the response is successful
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          // Return the response as a blob
+          return response.blob();
+        })
+        .then(imageBlob => {
+          // Create a URL for the blob object
+          const imageUrl = URL.createObjectURL(imageBlob);
+          // Set the src attribute of the image element to display the image
+          imageElement.src = imageUrl;
+        })
+        .catch(error => {
+          console.error('Error fetching image:', error);
+        });
+
+    });
+
+  </script>
+</body>
+
+</html>
