@@ -1,12 +1,13 @@
 const fs = require('fs');
 const { createCanvas, loadImage } = require('canvas');
 
-async function blocktoimg(inputDirectory,outputImagePath) {
+async function blocktoimg(inputDirectory,outputImagePath,inputImagePath) {
     try {
-
+        // Load the image
+        const originalImage = await loadImage(inputImagePath);
         // Set dimensions of the original image
-        const originalWidth = 930;
-        const originalHeight = 620;
+        const originalWidth = originalImage.width;
+        const originalHeight = originalImage.height;
 
         // row and column which are used to combine the picture
         const rows = 4;

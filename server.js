@@ -187,7 +187,7 @@ app.get('/CalculateDamagePortion', (req, res) => {
         // Task4.3 : Highlighting damage part of image...
         await processImages();
         // Task-4.4 : Generate image from blocks of images
-        await blocktoimg('./BlocksOfImage/BlockOfOriginalImage/', './tempFolder/reconstructed_image.jpeg')
+        await blocktoimg('./BlocksOfImage/BlockOfOriginalImage/', './tempFolder/reconstructed_image.jpeg','./assets/original_image.jpeg')
 
         res.send("calculation of damage portion is completed!!!")
     })()

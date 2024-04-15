@@ -4,8 +4,6 @@ const { createCanvas, loadImage } = require('canvas');
 
 async function imgtoblock(inputImagePath , outputDir) {
     try {
-        // Replace "inputImagePath" with the path to your input image
-        // const inputImagePath = './img1.jpeg';
 
         // Load the image
         const originalImage = await loadImage(inputImagePath);
