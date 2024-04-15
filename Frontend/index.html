@@ -5,18 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Processing</title>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Task 1: Upload Original Image</h1>
+
+    <h1>Verifying image authenticity and recovery using Merkle Tree based mechanism</h1><hr><br>
+  <h3><b>Task 1</b>: Upload Original Image</h3>
   <form id="originalForm" action="/uploadOriginal" method="POST" enctype="multipart/form-data">
     <input type="file" name="original_image" accept="image/*" required>
     <button type="submit">Upload Original Image</button>
   </form>
   <div id="originalMessage"></div>
 
-  <h1>Task 2: Upload Damage Image</h1>
+  <h3><b>Task 2</b>: Upload Damage Image</h3>
   <form id="damageForm" action="/uploadDamage" method="POST" enctype="multipart/form-data" disabled>
     <input type="file" name="damage_image" accept="image/*" required>
     <button type="submit">Upload Damage Image</button>
@@ -24,17 +26,17 @@
   <div id="damageMessage"></div>
 
   <!-- Add Task 3 Button and Result Display -->
-  <h1>Task 3: Perform Operation</h1>
-  <button id="performOperation">Perform Operation</button>
+  <h3><b>Task 3</b>: Perform Operation</h3>
+  <button id="performOperation">Perform Operation</button><br>
   <div id="operationResult"></div>
 
    <!-- Add Task 4 Button and Result Display -->
-   <h1>Task 4: Calculate damage portion</h1>
-   <button id="CalculateDamagePortion">Calculate damage portion</button>
+   <h3><b>Task 4</b>: Calculate damage portion</h3>
+   <button id="CalculateDamagePortion">Calculate damage portion</button><br>
    <div id="damageOperationResult"></div>
 
   <!-- Add Task 5 Button and Result Display -->
-  <h1>Task 5: Show damaged part of image</h1>
+  <h3><b>Task 5</b>: Show damaged part of image</h3>
   <button id="imagePerformOperation">Load image</button><br><br>
   <img id="image" src="" alt="Image">
 

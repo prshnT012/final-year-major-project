@@ -165,9 +165,9 @@ app.get('/performOperation', (req, res) => {
 
         // Compare values from both files
         if (JSON.stringify(data1) === JSON.stringify(data2)) {
-            res.send('Values in both JSON files are identical.')
+            res.send('Both Merkle roots are same for both images.')
         } else {
-            res.send('Values in both JSON files are different.')
+            res.send('Both merkle roots are different for both images.')
         }
     }
     // Example usage
