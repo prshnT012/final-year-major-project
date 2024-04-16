@@ -38,7 +38,6 @@ async function processImages() {
         // Read comparisonResult.json file
         const comparisonData = await fsAsync.readFile('./tempFolder/comparisonResult.json', 'utf8');
         const comparisonResult = JSON.parse(comparisonData);
-        // console.log("hello in processImage")
         // Loop through each entry in comparisonResult
         for (const [inputPath, shouldHighlight] of Object.entries(comparisonResult)) {
             if (shouldHighlight) {
@@ -53,10 +52,6 @@ async function processImages() {
     }
 }
 
-// testing function
-async function testing() {
-    console.log("hello in testing")
-}
 
 // Task 1: Handle original image upload
 app.post('/uploadOriginal', upload.single('original_image'), (req, res) => {
