@@ -23,14 +23,54 @@
 
 ## Demo image
 
-### Orignal image - 
+### Orignal image  
 
 
 
 
 
 
-### Damage image - 
+### Damage image 
+
+
+
+
+
+
+
+
+## Interface image 
+
+
+
+
+
+
+
+## Upload encrypted image into IPFS
+
+
+
+
+
+
+
+
+
+
+## Merkle Tree generation
+
+
+
+
+
+
+
+
+## Results
+
+
+
 
 
 
