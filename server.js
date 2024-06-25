@@ -200,61 +200,8 @@ app.get('/image', (req, res) => {
 });
 
 
-
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const wait = (ms) => new Promise( resolve => setTimeout(resolve,ms));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Call the function with imagePath and outputDir arguments
