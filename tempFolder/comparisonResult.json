@@ -1,10 +1,10 @@
 {
-  "block0_0.jpeg": true,
+  "block0_0.jpeg": false,
   "block0_1.jpeg": false,
   "block0_2.jpeg": false,
   "block0_3.jpeg": false,
   "block1_0.jpeg": false,
-  "block1_1.jpeg": false,
+  "block1_1.jpeg": true,
   "block1_2.jpeg": false,
   "block1_3.jpeg": false,
   "block2_0.jpeg": false,
@@ -13,6 +13,6 @@
   "block2_3.jpeg": false,
   "block3_0.jpeg": false,
   "block3_1.jpeg": false,
-  "block3_2.jpeg": false,
+  "block3_2.jpeg": true,
   "block3_3.jpeg": false
 }
