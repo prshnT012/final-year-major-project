@@ -52,24 +52,17 @@ https://copper-patient-limpet-124.mypinata.cloud/ipfs/QmPjnqNFzGqJB6WcrjxCe2nBEF
 
 ## Merkle Tree generation
 
-### Original iamge merkle tree
+### Original image Merkle tree
 ![MerkleTreeOriginalImage](https://github.com/prshnT012/final-year-major-project/assets/123406900/ba08f67f-d3db-4177-8bcf-6af9989178a2)
 
-### damage iamge merkle tree
+### damage image Merkle tree
 ![MerkleTreeDamageImage](https://github.com/prshnT012/final-year-major-project/assets/123406900/6cae38f7-d888-47bd-9034-d0bf69fb11eb)
-
-
-### Merkle root of original iamge
-
-
-### Merkle root of damage iamge
-
 
 
 
 ## Results
 
-
+- As Merkle root should be same for original image without damage otherwise it's different.
 
 
 ### console output
