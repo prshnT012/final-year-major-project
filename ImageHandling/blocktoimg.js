@@ -42,9 +42,6 @@ async function blocktoimg(inputDirectory,outputImagePath,inputImagePath) {
             }
         }
 
-        // Replace "outputImagePath" with the desired path for the reconstructed image
-        // const outputImagePath = './reconstructed_image.jpeg';
-
         // Save the reconstructed image
         const out = fs.createWriteStream(outputImagePath);
         const stream = canvas.createJPEGStream();

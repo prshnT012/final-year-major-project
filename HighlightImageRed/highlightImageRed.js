@@ -20,11 +20,4 @@ async function highlightImageRed(inputPath) {
     }
 }
 
-// // Specify the path for the input image
-// const inputImagePath = './img1.jpeg';  // Path to the input image
-
-// // Run the function to highlight the image
-// highlightImageRed(inputImagePath);
-
-
 module.exports = {highlightImageRed}
