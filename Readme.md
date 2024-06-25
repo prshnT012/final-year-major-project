@@ -3,7 +3,6 @@
 
 - Project aim is to secure your digital image and if any damage happens to original image system can easily detect it.
 - Just upload your orignal and damage image, system do some calculation and gives you a result.
-- Rest assured, your data is securely saved locally, even if you need to close your browser.
 
 ---
 ## Preview
